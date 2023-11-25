@@ -138,7 +138,7 @@ def parse_args():
 
 def check_update():
     LATEST_VER = requests.get(
-        "https://raw.githubusercontent.com/Psoidh/Insta/main/enc-mahos"
+        "https://raw.githubusercontent.com/Psoidh/Ghh/main/.version"
     ).text.strip()
     with open(".version") as version:
         return True if float(version.read().strip()) < float(LATEST_VER) else False
@@ -150,7 +150,7 @@ def update():
         _ = subprocess.run(["git", "pull"], check=True)
     else:
         latest_source = requests.get(
-            "https://raw.githubusercontent.com/Psoidh/Insta/main/encode"
+            "https://raw.githubusercontent.com/Psoidh/Ghh/main/enc-mahos.py"
         ).content
         with open("enc-mahos.py", "wb") as file:
             file.write(latest_source)
